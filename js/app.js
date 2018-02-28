@@ -49,3 +49,9 @@ async function drawNei(asn) {
 }
 
 drawNei(Number.parseInt(prompt('ASN to get started')));
+document.addEventListener('keydown', e => {
+  if(e.key == "Enter") {
+    var as = prompt('Add ASN(s) to map (separate by ",")');
+    as.split(',').map(n => Number.parseInt(n)).forEach(drawNei);
+  }
+});
